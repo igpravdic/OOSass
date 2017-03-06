@@ -1,0 +1,29 @@
+// Helpers - Functions, mixins, variables,...
+
+@import 'helpers/_variables.scss';
+@import 'helpers/_functions.scss';
+@import 'helpers/_mixins.scss';
+
+
+// Base - Base styles, normalize, reset, typography,...
+
+@import 'base/_base.scss';
+@import 'base/_reset.scss';
+@import 'base/_normalize.scss';
+@import 'base/_typography.scss';
+
+
+// Layout - Header, footer, sidebar,...
+
+@import 'layout/_header.scss';
+@import 'layout/_footer.scss';
+@import 'layout/_sidebar.scss';
+
+// Layout/view - Simple page, home page, contact page,...
+
+@import 'layout/view/_simplePage.scss';
+
+// Vendor - jQuery ui, color picker,...
+
+@import 'vendor/_colorpicker.scss';
+@import 'vendor/_jqueryui.scss';

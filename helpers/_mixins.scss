@@ -1,0 +1,174 @@
+//Mixins style
+
+//Media queries Mixins
+
+@mixin mobile{
+    @media (max-width: 767px) and (min-width: 300px){
+        @content;
+    }
+}
+
+@mixin mobilePortrait{
+    @media (max-width: 380px) and (min-width: 300px){
+        @content;
+    }
+}
+
+@mixin mobileLandscape{
+    @media (max-width: 767px) and (min-width: 381px){
+        @content;
+    }
+}
+@mixin mobileTablet{
+    @media (max-width: 1024px) and (min-width: 300px){
+        @content;
+    }
+}
+
+@mixin mobileTabPortrait{
+    @media (max-width: 992px) and (min-width: 300px){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (max-width: 1024px) and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin tabletPortrait{
+    @media (max-width: 992px) and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin tabletLandscape{
+    @media (max-width: 1025px) and (min-width: 993px){
+        @content;
+    }
+}
+
+@mixin tabletDesktop{
+    @media (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin tabletLandscapeDesktop{
+    @media (min-width: 993px){
+        @content;
+    }
+}
+
+@mixin desktopLg{
+     @media (max-width: 1500px) and (min-width: 1025px){
+        @content;
+    }
+}
+
+@mixin desktopLgPlus{
+    @media (min-width: 1431px){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (min-width: 1025px){
+        @content;
+    }
+}
+@mixin customMedia($min, $max){
+    @media (max-width: $max) and (min-width: $min){
+        @content;
+    }
+}
+
+@mixin retina {
+    @media only screen and (min--moz-device-pixel-ratio: 2),
+
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+
+    only screen and (min-device-pixel-ratio: 2) {
+
+        @content;
+
+    }
+}
+
+
+//Input border mixin - start 
+
+@mixin boxShadow($top, $left, $blur, $size, $color){
+    -webkit-box-shadow: $top $left $blur $size $color;
+    -moz-box-shadow: $top $left $blur $size $color;
+    box-shadow: $top $left $blur $size $color;
+}
+
+@mixin boxShadowNone($none){
+    -webkit-box-shadow: $none;
+    -moz-box-shadow: $none;
+    box-shadow: $none;
+}
+
+//Simple button
+
+@mixin simpleBtn($bgcolor, $height, $width, $color){
+    background-color: $bgcolor;
+    height: $height;
+    width: $width;
+    color: $color;
+}
+
+//Rotate background
+
+@mixin rotateBackground($deg){
+    -webkit-transform: rotate(#{$deg}deg);
+    -moz-transform: rotate(#{$deg}deg);
+    -ms-transform: rotate(#{$deg}deg);
+    -o-transform: rotate(#{$deg}deg);
+    transform: rotate(#{$deg}deg);
+}
+
+//Border radius 
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  //stops bg color from leaking outside the border: 
+}
+
+//Vertical align 
+@mixin vertical-align($position: relative) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+//Input placeholder style
+@mixin placeholderFont($color,$size,$weight){
+    &::-webkit-input-placeholder { //Chrome/Opera/Safari
+        color: $color;
+        font-size: $size;
+        font-weight: $weight;
+    }
+    &::-moz-placeholder { //Firefox 19+
+        color: $color;
+        font-size: $size;
+        font-weight: $weight;
+    }
+    &:-ms-input-placeholder { //IE 10+
+        color: $color;
+        font-size: $size;
+        font-weight: $weight;
+    }
+    &:-moz-placeholder { //Firefox 18-
+        color: $color;
+        font-size: $size;
+        font-weight: $weight;
+    }
+}
